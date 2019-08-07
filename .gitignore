@@ -8,3 +8,4 @@ prject/sb/__pycache__
 *.pyc
 venv/
 env/
+private.txt
