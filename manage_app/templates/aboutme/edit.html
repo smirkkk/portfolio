@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% include 'manage/index.html' %}
+<br>
+<br>
+<br>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
 
-</body>
-</html>
+    <table>
+        <tr>
+            <th>텍스트</th>
+            <td>{{form.text}}</td>
+        </tr>
+        <tr>
+            <th>이미지</th>
+            <td>{{form.img}}</td>
+        </tr>
+    </table>
+    <button type="submit">저장</button>
+</form>

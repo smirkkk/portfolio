@@ -23,10 +23,10 @@
             </h1>
             <ul>
                 <li  id="profilepic">
-                    <img src="{% static 'img/tiger.jpg' %}" style="width:195px; height:300px;">
+                    <img src="{{aboutme.img.url}}" style="width:195px; height:300px;">
                 </li>
                 <li id="introduce">
-                     우제목 기린과의 포유류로 아프리카에 사는 목이 긴 초식동물이다. 총 1속 1종이 존재하는 단일종으로 알려졌으나, 2016년 9월 10일까지 연구를 통해 4종이 존재하는 것이 밝혀졌다.
+                     {{aboutme.text}}
                 </li>
             </ul>
         </div>
