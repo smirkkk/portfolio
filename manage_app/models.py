@@ -1,7 +1,11 @@
 from django.db import models
 
 # Create your models here.
+from django.urls import reverse
 from django.utils import timezone
+
+from markdownx.models import MarkdownxField
+from markdownx.utils import markdownify
 
 
 class AboutMe(models.Model):
@@ -24,7 +28,14 @@ class Skills(models.Model):
 
 
 class Repository(models.Model):
-    title = models.CharField(default=None, null=True, blank=True, max_length=100)
-    repository = models.URLField(default=None, null=True, blank=True)
-    started = models.CharField(default=None, null=True, blank=True, max_length=7)
-    finished = models.CharField(default=None, null=True, blank=True, max_length=7)
+    title = models.CharField(blank=True, null=True, max_length=50)
+    text = MarkdownxField(default=None)
+    published_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
+    edited_date = models.DateTimeField(blank=True, null=True)
+    repository_url = models.URLField(default=None, null=True, blank=True)
+    period = models.CharField(default=None, null=True, blank=True, max_length=50)
+    technique = models.TextField(default=None, null=True, blank=True)
+    role = models.TextField(default=None, null=True, blank=True)
+
+    def formatted_markdown(self):
+        return markdownify(self.text)
