@@ -1,0 +1,18 @@
+{% include 'manage/index.html' %}
+<br>
+<a href="{% url 'career_create' %}">추가</a>
+<br>
+<table>
+    <tr>
+        <th>연도</th>
+        <th>월</th>
+        <th>내용</th>
+    </tr>
+    {% for object in object_list %}
+    <tr>
+        <td>{{object.year}}</td>
+        <td>{{object.month}}</td>
+        <td><a href="{% url 'career_update' object.id %}">{{object.text}}</a></td>
+    </tr>
+    {% endfor %}
+</table>
