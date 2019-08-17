@@ -70,9 +70,26 @@
                 <h1 class="indexh1">
                     Portfolio
                 </h1>
+                <ul>
+                    {% for object in repository_list %}
+                    <li>
+                        <div class="repository_list" id="{{object.id}}">
+                            <span class="repository_title">{{object.title}}</span>
+                            <span class="repository_technique">{{object.technique}}</span>
+                            <span class="repository_link">></span>
+<!--                            <span class="repository_icon" style="font-size:40px; color:gray;"><i class="fas fa-terminal"></i></span>-->
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
 
     </div>
 </section>
+<script>
+    $('.repository_list').click(function(){
+        location.href = '/repository/' + $(this).attr('id');
+    });
+</script>
 {% include 'main/footer.html' %}

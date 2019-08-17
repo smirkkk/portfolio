@@ -3,9 +3,9 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.views import View
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, DetailView
 
-from manage_app.models import AboutMe, Career
+from manage_app.models import AboutMe, Career, Repository
 
 
 class IndexView(View):
@@ -25,8 +25,18 @@ class IndexView(View):
                 tmp_list.append(y)
             career_dict[str(x)] = tmp_list
 
+        repository_list = Repository.objects.all()
+
         context['career_dict'] = career_dict
 
         context['aboutme'] = aboutme
 
+        context['repository_list'] = repository_list
+
         return render(request=request, context=context, template_name='main/index.html')
+
+
+class RepositoryDetailView(DetailView):
+    template_name = 'main/repository.html'
+    model = Repository
+    slug_field = 'pk'

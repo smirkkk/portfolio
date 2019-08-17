@@ -1,0 +1,28 @@
+{% load staticfiles %}
+{% include 'main/header.html' %}
+
+<section id="indexsection">
+    <div id="content">
+        <div class="indexcontent" id="portfolio">
+            <div class="content">
+                <h1 class="indexh1">
+                    {{object.title}}
+                </h1>
+                <ul>
+                    {% for object in repository_list %}
+                    <li>
+                        <div class="repository_list" id="{{object.id}}">
+                            <span class="repository_title">{{object.title}}</span>
+                            <span class="repository_technique">{{object.technique}}</span>
+                            <span class="repository_link">></span>
+                            <!--                            <span class="repository_icon" style="font-size:40px; color:gray;"><i class="fas fa-terminal"></i></span>-->
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% include 'main/footer.html' %}

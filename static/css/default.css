@@ -109,6 +109,10 @@
     #indexsection .indexcontent #search_for_tags .post_hashtag a {color:white; margin-left:10px; text-decoration: none; cursor:pointer;}
     #mobile_post_list {display:none;}
 
+    #indexsection .indexcontent .repository_list { height:100px; }
+    #indexsection .indexcontent .repository_list:hover { background:#1a222c; transition:0.5s; color:white;}
+    #indexsection .indexcontent .repository_list .repository_title { line-height:100px; font-size:24px; padding:0 50px;}
+    #indexsection .indexcontent .repository_list .repository_link { line-height:100px; font-size:35px; padding:0 50px; float:right; }
 
     /* custom set */
     .w80 {width:80px;}
