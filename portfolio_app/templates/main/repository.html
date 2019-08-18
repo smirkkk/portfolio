@@ -8,6 +8,24 @@
                 <h1 class="indexh1">
                     {{object.title}}
                 </h1>
+                <table>
+                    <tr>
+                        <th>Github Repository</th>
+                        <td><a href="{{object.repository_link}}">LINK</a></td>
+                    </tr>
+                    <tr>
+                        <th>개발 기간</th>
+                        <td>{{object.period}}</td>
+                    </tr>
+                    <tr>
+                        <th>기술</th>
+                        <td>{{object.technique}}</td>
+                    </tr>
+                    <tr>
+                        <th>역할</th>
+                        <td>{{object.role}}</td>
+                    </tr>
+                </table>
                 <ul>
                     {% for object in repository_list %}
                     <li>
