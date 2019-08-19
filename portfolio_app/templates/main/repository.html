@@ -4,15 +4,18 @@
 <section id="indexsection">
     <div id="content">
         <div class="indexcontent" id="portfolio">
-            <div class="content">
+            <div class="portfolio_content">
                 <h1 class="indexh1">
                     {{object.title}}
                 </h1>
-                <table>
-                    <tr>
-                        <th>Github Repository</th>
-                        <td><a href="{{object.repository_link}}">LINK</a></td>
-                    </tr>
+
+                <h3 class="portfolio_summery_title">개요</h3>
+
+                <table id="portfolio_summery">
+                    <colgroup>
+                        <col style="width:40%;">
+                        <col style="width:60%;">
+                    </colgroup>
                     <tr>
                         <th>개발 기간</th>
                         <td>{{object.period}}</td>
@@ -25,22 +28,50 @@
                         <th>역할</th>
                         <td>{{object.role}}</td>
                     </tr>
+                    <tr>
+                        <th>Github Repository</th>
+                        <td><a href="{{object.repository_link}}">LINK</a></td>
+                    </tr>
                 </table>
-                <ul>
-                    {% for object in repository_list %}
-                    <li>
-                        <div class="repository_list" id="{{object.id}}">
-                            <span class="repository_title">{{object.title}}</span>
-                            <span class="repository_technique">{{object.technique}}</span>
-                            <span class="repository_link">></span>
-                            <!--                            <span class="repository_icon" style="font-size:40px; color:gray;"><i class="fas fa-terminal"></i></span>-->
-                        </div>
-                    </li>
-                    {% endfor %}
-                </ul>
+
+                <h3 class="portfolio_summery_title">상세</h3>
+                {% if len > 0 %}
+                <table id="portfolio_img_table">
+                    <colgroup>
+                        <col style="width:20%">
+                        <col style="width:60%">
+                        <col style="width:20%">
+                    </colgroup>
+                    <tr class="img_notice">
+                        <td colspan="3"><p>* 이미지를 클릭하시면 확대하실 수 있습니다.</p></td>
+                    </tr>
+                    <tr>
+                        <td class="img_button" onclick="imgSlide(-1)">&#10094;</td>
+                        <td><a id="detail_img_link" href="{{object.img1.url}}" target="_blank"><img src="{{object.img1.url}}" id="detail_img"></a></td>
+                        <td class="img_button" onclick="imgSlide(1)">&#10095;</td>
+                    </tr>
+                </table>
+                {% endif %}
+
+                {{object.formatted_markdown|safe}}
+
             </div>
         </div>
-
     </div>
 </section>
+<script>
+    img_list = {{img_dict|safe}}
+    index = {{len}}
+    len = {{len}}
+
+    function imgSlide(img_index){
+        index += img_index
+        seq = index % len
+        if (seq < 0 ){
+            seq = seq * -1
+        }
+        $('#detail_img').attr('src', img_list['img' + seq]);
+        $('#detail_img_link').attr('href', img_list['img' + seq]);
+    }
+</script>
 {% include 'main/footer.html' %}
