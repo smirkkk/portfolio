@@ -21,7 +21,13 @@ class SkillsForm(forms.ModelForm):
 
 
 class RepositoryForm(forms.ModelForm):
+    img1 = forms.ImageField(required=False)
+    img2 = forms.ImageField(required=False)
+    img3 = forms.ImageField(required=False)
+    img4 = forms.ImageField(required=False)
+    img5 = forms.ImageField(required=False)
 
     class Meta:
         model = Repository
-        fields = ('title', 'text', 'period', 'repository_url', 'role', 'technique',)
+        fields = ('title', 'text', 'period', 'repository_url', 'role', 'technique', 'img1', 'img2', 'img3', 'img4',
+                  'img5', 'type')

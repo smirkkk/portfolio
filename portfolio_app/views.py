@@ -1,3 +1,5 @@
+import json
+
 from django.db.models import Count
 from django.shortcuts import render
 
@@ -40,3 +42,19 @@ class RepositoryDetailView(DetailView):
     template_name = 'main/repository.html'
     model = Repository
     slug_field = 'pk'
+
+    def get_context_data(self, **kwargs):
+        context = super(RepositoryDetailView, self).get_context_data(**kwargs)
+        # img_dict = {'img1': None, 'img2': None, 'img3': None, 'img4': None, 'img5': None}
+        img_dict = {}
+        len = 0
+
+        for x in range(1, 6):
+            if getattr(self.object, 'img'+str(x)):
+                img_dict['img' + str(x-1)] = getattr(self.object, 'img'+str(x)).url
+                len += 1
+
+        context['img_dict'] = json.dumps(img_dict)
+        context['len'] = len
+
+        return context
