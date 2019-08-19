@@ -16,16 +16,25 @@ class IndexView(View):
 
         aboutme = AboutMe.objects.get(pk=1)
 
+        year_month_dict = {}
         # list(set()) 은 중복값 제거
         year_list = list(set(([str(x['year']) for x in Career.objects.values('year').annotate(Count('year'))])))
+        for x in year_list:
+            month_list = list(set(([x['month'] for x in Career.objects.values('month').filter(year=x).annotate(Count('month'))])))
+            month_list.sort(reverse=True)
+            year_month_dict[x] = month_list
 
         career_dict = {}
-        for x in year_list:
-            tmp_query = Career.objects.filter(year=x).order_by('-year', 'month')
-            tmp_list = []
-            for y in tmp_query:
-                tmp_list.append(y)
-            career_dict[str(x)] = tmp_list
+
+        for x in year_month_dict:
+            tmp_dict = {}
+            for y in year_month_dict[x]:
+                tmp_query = Career.objects.filter(year=x, month=y).order_by('-year', 'month')
+                tmp_list = []
+                for z in tmp_query:
+                    tmp_list.append(z)
+                tmp_dict[y] = tmp_list
+            career_dict[x] = tmp_dict
 
         repository_list = Repository.objects.all()
 

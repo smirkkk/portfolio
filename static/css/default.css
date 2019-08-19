@@ -71,12 +71,11 @@
     #indexsection {width:100%;}
 
     #indexsection #content {background:white; width: 1000; margin: 0 auto; display:block; clear:both; /*border: 1px solid #3c3432; border-style: dashed; border-radius: 10px;*/}
-    #indexsection .indexcontent {width: 1000; /*text-align:center;*/ display:block; clear:both;}
+    #indexsection .indexcontent {width: 1000; /*text-align:center;*/ display:block; clear:both; overflow:auto; }
     #indexsection ul {list-style:none;}
 
-    #indexsection #intro {height:400px;}
     #indexsection #intro ul {text-align:center;}
-    #indexsection #intro ul li {float:left; height:400px; width:400px;}
+    #indexsection #intro ul li {float:left; width:45%; font-size:20px;}
 
     #indexsection #posts {margin-top: 100px auto;}
     #indexsection #posts h3 {color: #1a222c; margin:50px 0;}
@@ -109,10 +108,31 @@
     #indexsection .indexcontent #search_for_tags .post_hashtag a {color:white; margin-left:10px; text-decoration: none; cursor:pointer;}
     #mobile_post_list {display:none;}
 
+    #indexsection .indexcontent #career_div .career_object { width:100%; min-height:50px; margin-bottom:50px;}
+    #indexsection .indexcontent #career_div .year_div { float:left; width:10%; line-height:50px; font-size:28px; text-align:center;}
+    #indexsection .indexcontent #career_div .month_div { float:left; width:90%; min-height:50px; line-height:50px; border-left:3px solid #1a222c;}
+    #indexsection .indexcontent #career_div .month_div .month_span { float:left; font-size:20px; width:5%; margin-left:20px;}
+    #indexsection .indexcontent #career_div .month_div .text_span { float:right; font-size:16px; width:90%;}
+
     #indexsection .indexcontent .repository_list { height:100px; }
     #indexsection .indexcontent .repository_list:hover { background:#1a222c; transition:0.5s; color:white;}
     #indexsection .indexcontent .repository_list .repository_title { line-height:100px; font-size:24px; padding:0 50px;}
     #indexsection .indexcontent .repository_list .repository_link { line-height:100px; font-size:35px; padding:0 50px; float:right; }
+
+
+    /* 포트폴리오 */
+    #indexsection .indexcontent .portfolio_content { margin: 100px 0;}
+    #indexsection .indexcontent .portfolio_content .portfolio_summery_title { margin:50px 0; }
+    #indexsection .indexcontent .portfolio_content #portfolio_summery {width:90%; height:150px; margin:50px auto 100px auto;}
+    #indexsection .indexcontent .portfolio_content #portfolio_summery tr { border-bottom: 1px solid black; }
+    #indexsection .indexcontent .portfolio_content #portfolio_summery tr th,
+    #indexsection .indexcontent .portfolio_content #portfolio_summery tr td {  text-align:center; }
+    #indexsection .indexcontent #portfolio_img_table {width:100%; height:800px; max-height:800px; text-align:center; border:1px solid lightgray; border-radius:5px;}
+    #indexsection .indexcontent #portfolio_img_table .img_notice {height:80px; color:gray;}
+    #indexsection .indexcontent #portfolio_img_table .img_button {font-size:35px;}
+    #indexsection .indexcontent #portfolio_img_table .img_button:hover {cursor:pointer;}
+    #indexsection .indexcontent #portfolio_img_table img:hover {cursor:zoom-in;}
+
 
     /* custom set */
     .w80 {width:80px;}
