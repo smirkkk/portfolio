@@ -4,7 +4,7 @@ from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 
 from .views import ManageIndexView, AboutMeView, CareerListView, CareerCreateView, CareerEditView, RepositoryListView, \
-    RepositoryCreateView, RepositoryEditView
+    RepositoryCreateView, RepositoryEditView, SkillsEditView, SkillsCreateView, SkillsListView
 
 urlpatterns = [
     # path(r'', IndexView.as_view(), name='index'),
@@ -19,6 +19,10 @@ urlpatterns = [
     path(r'repository/list/', RepositoryListView.as_view(), name='repository_list'),
     path(r'repository/create/', RepositoryCreateView.as_view(), name='repository_create'),
     path(r'repository/update/<int:pk>/', RepositoryEditView.as_view(), name='repository_update'),
+
+    path(r'skills/list/', SkillsListView.as_view(), name='skills_list'),
+    path(r'skills/create/', SkillsCreateView.as_view(), name='skills_create'),
+    path(r'skills/update/<int:pk>/', SkillsEditView.as_view(), name='skills_update'),
 
 ]
 # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

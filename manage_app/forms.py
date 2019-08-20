@@ -17,7 +17,7 @@ class CareerForm(forms.ModelForm):
 class SkillsForm(forms.ModelForm):
     class Meta:
         model = Skills
-        fields = ('title', 'point', 'icon')
+        fields = ('title', 'point')
 
 
 class RepositoryForm(forms.ModelForm):

@@ -1,0 +1,16 @@
+{% include 'manage/index.html' %}
+<br>
+<a href="{% url 'skills_create' %}">추가</a>
+<br>
+<table>
+    <tr>
+        <th>제목</th>
+        <th>값</th>
+    </tr>
+    {% for object in object_list %}
+    <tr>
+        <td><a href="{% url 'skills_update' object.id %}">{{object.title}}</a></td>
+        <td>{{object.point}}</td>
+    </tr>
+    {% endfor %}
+</table>

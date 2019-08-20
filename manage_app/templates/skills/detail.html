@@ -1,0 +1,19 @@
+{% include 'manage/index.html' %}
+<br>
+<br>
+<br>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <table>
+        <tr>
+            <th>제목</th>
+            <td>{{form.title}}</td>
+        </tr>
+        <tr>
+            <th>값</th>
+            <td>{{form.point}}</td>
+        </tr>
+    </table>
+    <button type="submit">저장</button>
+</form>

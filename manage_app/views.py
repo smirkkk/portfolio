@@ -3,8 +3,8 @@ from django.shortcuts import render
 # Create your views here.
 from django.utils import timezone
 from django.views.generic import TemplateView, UpdateView, ListView, CreateView
-from .models import AboutMe, Career, Repository
-from .forms import AboutMeForm, CareerForm, RepositoryForm
+from .models import AboutMe, Career, Repository, Skills
+from .forms import AboutMeForm, CareerForm, RepositoryForm, SkillsForm
 
 
 class ManageIndexView(TemplateView):
@@ -71,3 +71,27 @@ class RepositoryEditView(UpdateView):
     form_class = RepositoryForm
     slug_field = 'pk'
     success_url = '/manage/repository/list/'
+
+
+class SkillsListView(ListView):
+    paginate_by = 100
+    template_name = 'skills/list.html'
+
+    def get_queryset(self):
+        query = Skills.objects.all()
+        return query
+
+
+class SkillsCreateView(CreateView):
+    template_name = 'skills/detail.html'
+    form_class = SkillsForm
+    model = Skills
+    success_url = '/manage/skills/list'
+
+
+class SkillsEditView(UpdateView):
+    template_name = 'skills/detail.html'
+    model = Skills
+    form_class = SkillsForm
+    slug_field = 'pk'
+    success_url = '/manage/skills/list/'
