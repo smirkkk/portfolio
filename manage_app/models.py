@@ -32,6 +32,7 @@ class Repository(models.Model):
     type = models.CharField(blank=True, null=True, default=None, max_length=10)
     title = models.CharField(blank=True, null=True, max_length=50)
     text = MarkdownxField(default=None)
+    comment = models.CharField(blank=True, null=True, default=None, max_length=100)
     published_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
     edited_date = models.DateTimeField(blank=True, null=True)
     repository_url = models.URLField(default=None, null=True, blank=True)
