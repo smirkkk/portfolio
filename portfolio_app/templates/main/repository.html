@@ -28,10 +28,12 @@
                         <th>역할</th>
                         <td>{{object.role}}</td>
                     </tr>
+                    {% if not object.repository_link %}
                     <tr>
                         <th>Github Repository</th>
                         <td><a href="{{object.repository_link}}">LINK</a></td>
                     </tr>
+                    {% endif %}
                 </table>
 
                 <h3 class="portfolio_summery_title">상세</h3>
@@ -52,8 +54,11 @@
                     </tr>
                 </table>
                 {% endif %}
-
+                <br>
+                <br>
+                <div id="repository_markdown">
                 {{object.formatted_markdown|safe}}
+                </div>
 
             </div>
         </div>
