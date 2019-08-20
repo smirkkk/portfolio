@@ -19,6 +19,7 @@ class IndexView(View):
         year_month_dict = {}
         # list(set()) 은 중복값 제거
         year_list = list(set(([str(x['year']) for x in Career.objects.values('year').annotate(Count('year'))])))
+        year_list.sort(reverse=True)
         for x in year_list:
             month_list = list(set(([x['month'] for x in Career.objects.values('month').filter(year=x).annotate(Count('month'))])))
             month_list.sort(reverse=True)
