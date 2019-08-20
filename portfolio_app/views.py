@@ -7,7 +7,7 @@ from django.shortcuts import render
 from django.views import View
 from django.views.generic import TemplateView, DetailView
 
-from manage_app.models import AboutMe, Career, Repository
+from manage_app.models import AboutMe, Career, Repository, Skills
 
 
 class IndexView(View):
@@ -44,6 +44,8 @@ class IndexView(View):
         context['aboutme'] = aboutme
 
         context['repository_list'] = repository_list
+
+        context['skills'] = Skills.objects.all()
 
         return render(request=request, context=context, template_name='main/index.html')
 

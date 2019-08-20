@@ -55,6 +55,7 @@
                             {% endfor %}
                         </div>
                     </div>
+                    <br>
                     {% endfor %}
 
                 </div>
@@ -68,6 +69,9 @@
                 <h1 class="indexh1">
                     Skills
                 </h1>
+                <div id="chart_container">
+                <canvas id="skill_chart" width="400" height="400"></canvas>
+                </div>
             </div>
         </div>
         <br><br><br>
@@ -92,11 +96,65 @@
         </div>
 
     </div>
-</section>
-<script>
+    <script>
     $('.repository_list').click(function(){
         location.href = '/repository/' + $(this).attr('id');
     });
+
+var ctx = $('#skill_chart');
+
+new Chart(ctx,{
+    "type":"radar",
+    "data": {
+            "labels":[
+            {% for object in skills %}
+            "{{object.title}}",
+            {% endfor %}
+            ],
+            "datasets":[{
+                    "label":"Skills",
+                    "data":[
+            {% for object in skills %}
+            "{{object.point}}",
+            {% endfor %}
+                    ],
+                    "fill":true,
+                    "backgroundColor":"rgba(54, 162, 235, 0.2)",
+                    "borderColor":"rgb(54, 162, 235)",
+                    "pointBackgroundColor":"rgb(54, 162, 235)",
+                    "pointBorderColor":"#fff",
+                    "pointHoverBackgroundColor":"#fff",
+                    "pointHoverBorderColor":"rgb(54, 162, 235)"}]
+                },
+    "options":{
+        "elements":{
+            "line":{
+                "tension":0,
+                "borderWidth":3
+            }
+        },
+
+      "scale": {
+        "ticks": {
+            "beginAtZero": true,
+            "max": 100,
+            "min": 0,
+            "stepSize": 20
+        },
+        "pointLabels": { "fontSize":16 }
+      },
+
+        "legend": {
+            "display": false,
+            "labels": {
+                "fontSize": 20,
+            }
+        },
+    }
+});
+
+
 </script>
+</section>
 
 {% include 'main/footer.html' %}

@@ -108,16 +108,25 @@
     #indexsection .indexcontent #search_for_tags .post_hashtag a {color:white; margin-left:10px; text-decoration: none; cursor:pointer;}
     #mobile_post_list {display:none;}
 
-    #indexsection .indexcontent #career_div .career_object { width:100%; min-height:50px; margin-bottom:50px;}
+    #indexsection .indexcontent #career_div .career_object { width:100%; min-height:50px; margin-bottom:50px; overflow:auto;}
     #indexsection .indexcontent #career_div .year_div { float:left; width:10%; line-height:50px; font-size:28px; text-align:center;}
     #indexsection .indexcontent #career_div .month_div { float:left; width:90%; min-height:50px; line-height:50px; border-left:3px solid #1a222c;}
     #indexsection .indexcontent #career_div .month_div .month_span { float:left; font-size:20px; width:5%; margin-left:20px;}
     #indexsection .indexcontent #career_div .month_div .text_span { float:right; font-size:16px; width:90%;}
 
+    #indexsection .indexcontent #chart_container {position:relative; width:55%; margin:auto;}
+
     #indexsection .indexcontent .repository_list { height:100px; }
     #indexsection .indexcontent .repository_list:hover { background:#1a222c; transition:0.5s; color:white;}
+    #indexsection .indexcontent .repository_list:hover .repository_title { display: none; }
+    #indexsection .indexcontent .repository_list:hover .repository_comment { display: inline; line-height:100px; font-size:24px; padding:0 50px;}
+    #indexsection .indexcontent .repository_list .repository_comment { display:none; }
     #indexsection .indexcontent .repository_list .repository_title { line-height:100px; font-size:24px; padding:0 50px;}
     #indexsection .indexcontent .repository_list .repository_link { line-height:100px; font-size:35px; padding:0 50px; float:right; }
+
+    #indexsection .indexcontent #repository_markdown { overflow:auto; }
+    #indexsection .indexcontent #repository_markdown ul { padding-left:40px; list-style:disc; }
+    #indexsection .indexcontent #repository_markdown li { !important }
 
 
     /* 포트폴리오 */
