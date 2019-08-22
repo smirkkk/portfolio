@@ -22,13 +22,13 @@
                     </tr>
                     <tr>
                         <th>기술</th>
-                        <td>{{object.technique}}</td>
+                        <td><span style="white-space: pre-line">{{object.technique}}</span></td>
                     </tr>
                     <tr>
                         <th>역할</th>
-                        <td>{{object.role}}</td>
+                        <td><span style="white-space: pre-line">{{object.role}}</span></td>
                     </tr>
-                    {% if not object.repository_link %}
+                    {% if not object.repository_url %}
                     <tr>
                         <th>Github Repository</th>
                         <td><a href="{{object.repository_link}}">LINK</a></td>
