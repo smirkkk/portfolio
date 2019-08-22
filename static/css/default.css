@@ -126,7 +126,8 @@
 
     #indexsection .indexcontent #repository_markdown { overflow:auto; }
     #indexsection .indexcontent #repository_markdown ul { padding-left:40px; list-style:disc; }
-    #indexsection .indexcontent #repository_markdown li { !important }
+    #indexsection .indexcontent #repository_markdown li { font-size:16px; margin-bottom:5px; }
+    #indexsection .indexcontent #repository_markdown h3 { margin-top: 50px; }
 
 
     /* 포트폴리오 */
