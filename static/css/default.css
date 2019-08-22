@@ -133,10 +133,10 @@
     /* 포트폴리오 */
     #indexsection .indexcontent .portfolio_content { margin: 100px 0;}
     #indexsection .indexcontent .portfolio_content .portfolio_summery_title { margin:50px 0; }
-    #indexsection .indexcontent .portfolio_content #portfolio_summery {width:90%; height:150px; margin:50px auto 100px auto;}
+    #indexsection .indexcontent .portfolio_content #portfolio_summery {width:90%; min-height:150px; margin:50px auto 100px auto;}
     #indexsection .indexcontent .portfolio_content #portfolio_summery tr { border-bottom: 1px solid black; }
     #indexsection .indexcontent .portfolio_content #portfolio_summery tr th,
-    #indexsection .indexcontent .portfolio_content #portfolio_summery tr td {  text-align:center; }
+    #indexsection .indexcontent .portfolio_content #portfolio_summery tr td {  text-align:center; padding:10px;}
     #indexsection .indexcontent #portfolio_img_table {width:100%; height:800px; max-height:800px; text-align:center; border:1px solid lightgray; border-radius:5px;}
     #indexsection .indexcontent #portfolio_img_table .img_notice {height:80px; color:gray;}
     #indexsection .indexcontent #portfolio_img_table .img_button {font-size:35px;}
