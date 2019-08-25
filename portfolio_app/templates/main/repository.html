@@ -21,19 +21,13 @@
                         <td>{{object.period}}</td>
                     </tr>
                     <tr>
-                        <th>기술</th>
-                        <td><span style="white-space: pre-line">{{object.technique}}</span></td>
-                    </tr>
-                    <tr>
                         <th>역할</th>
                         <td><span style="white-space: pre-line">{{object.role}}</span></td>
                     </tr>
-                    {% if object.repository_url %}
                     <tr>
-                        <th>Github Repository</th>
-                        <td><a href="{{object.repository_url}}">LINK</a></td>
+                        <th>기술</th>
+                        <td><span style="white-space: pre-line">{{object.technique}}</span></td>
                     </tr>
-                    {% endif %}
                 </table>
 
                 <h3 class="portfolio_summery_title">상세</h3>
@@ -59,6 +53,22 @@
                 <div id="repository_markdown">
                 {{object.formatted_markdown|safe}}
                 </div>
+                <table id="etc_table">
+                    <colgroup>
+                        <col style="width:5%;">
+                        <col style="width:95%;">
+                    </colgroup>
+                    {% if object.repository_url %}
+                    <tr>
+                        <th><i class="fab fa-github fa-2x"></i></th>
+                        <td><a href="{{object.repository_url}}">Github Repository LINK</a></td>
+                    </tr>
+                    {% endif %}
+                    <tr>
+                        <th><i class="fas fa-envelope-square fa-2x"></i></th>
+                        <td><a href="mailto:444.gkk@gmail.com"><span>444.gkk@gmail.com</span></a></td>
+                    </tr>
+                </table>
 
             </div>
         </div>
