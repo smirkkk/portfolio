@@ -78,7 +78,7 @@
 
     #indexsection #intro ul {text-align:center;}
     #indexsection #intro ul li {float:left; width:45%; font-size:20px;}
-    #indexsection #intro ul #introduce span {white-space: nowrap;t}
+    #indexsection #intro ul #introduce {white-space: pre-line;}
 
     #indexsection #posts {margin-top: 100px auto;}
     #indexsection #posts h3 {color: #1a222c; margin:50px 0;}
