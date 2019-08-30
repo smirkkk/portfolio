@@ -144,6 +144,7 @@
     #indexsection .indexcontent #portfolio_img_table .img_button {font-size:35px;}
     #indexsection .indexcontent #portfolio_img_table .img_button:hover {cursor:pointer;}
     #indexsection .indexcontent #portfolio_img_table img:hover {cursor:zoom-in;}
+    #indexsection .indexcontent #portfolio_img_table img {max-height:600px; max-width:850px;}
     #indexsection .indexcontent #etc_table {width:100%; margin-top:50px;}
     #indexsection .indexcontent #etc_table tr {height:50px;}
     #indexsection .indexcontent #etc_table th i {padding-left:3px;}
